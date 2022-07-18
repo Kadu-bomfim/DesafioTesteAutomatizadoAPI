@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "21169234-f744-4957-956d-511f3c244156",
+		"name": "webmotors-qa-automation-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OnlineChallenge",
+			"item": [
+				{
+					"name": "/api/OnlineChallenge/Make",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID 1 \", () => {\r",
+									"    pm.environment.set(\"ID - 1\", jsonData[0].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID 2 \", () => {\r",
+									"    pm.environment.set(\"ID - 2\", jsonData[1].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID 3 \", () => {\r",
+									"    pm.environment.set(\"ID - 3\", jsonData[2].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel Marca 1 \", () => {\r",
+									"    pm.environment.set(\"marca 1\", jsonData[0].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel Marca 2 \", () => {\r",
+									"    pm.environment.set(\"marca 2\", jsonData[1].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel Marca 3 \", () => {\r",
+									"    pm.environment.set(\"marca 3\", jsonData[2].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)    \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 1\", () => {\r",
+									"    pm.expect(jsonData[0].ID).to.eql(pm.environment.get(\"ID - 1\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 2\", () => {\r",
+									"    pm.expect(jsonData[1].ID).to.eql(pm.environment.get(\"ID - 2\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 3\", () => {\r",
+									"    pm.expect(jsonData[2].ID).to.eql(pm.environment.get(\"ID - 3\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 1\", () => {\r",
+									"    pm.expect(jsonData[0].Name).to.eql(pm.environment.get(\"marca 1\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 2\", () => {\r",
+									"    pm.expect(jsonData[1].Name).to.eql(pm.environment.get(\"marca 2\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 3\", () => {\r",
+									"    pm.expect(jsonData[2].Name).to.eql(pm.environment.get(\"marca 3\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/OnlineChallenge/Make",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Make"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/OnlineChallenge/Model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID 1 \", () => {\r",
+									"    pm.environment.set(\"ID - Model - 1\", jsonData[0].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID 2 \", () => {\r",
+									"    pm.environment.set(\"ID - Model - 2\", jsonData[1].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID 3 \", () => {\r",
+									"    pm.environment.set(\"ID - Model - 3\", jsonData[2].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel MakeID 1 \", () => {\r",
+									"    pm.environment.set(\"ID - Make - 1\", jsonData[0].MakeID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID Make2 \", () => {\r",
+									"    pm.environment.set(\"ID - Make - 2\", jsonData[1].MakeID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID Make3 \", () => {\r",
+									"    pm.environment.set(\"ID - Make - 3\", jsonData[2].MakeID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel Name 1 \", () => {\r",
+									"    pm.environment.set(\"Name 1\", jsonData[0].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel Name 2\", () => {\r",
+									"    pm.environment.set(\"Name 2\", jsonData[1].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel Name 2 \", () => {\r",
+									"    pm.environment.set(\"Name 3\", jsonData[2].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)    \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar makeID 1\", () => {\r",
+									"    pm.expect(jsonData[0].MakeID).to.eq(pm.environment.get(\"ID - Make - 1\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar makeID 2\", () => {\r",
+									"    pm.expect(jsonData[1].MakeID).to.eq(pm.environment.get(\"ID - Make - 2\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar makeID 3\", () => {\r",
+									"    pm.expect(jsonData[2].MakeID).to.eq(pm.environment.get(\"ID - Make - 3\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 1\", () => {\r",
+									"    pm.expect(jsonData[0].ID).to.eql(pm.environment.get(\"ID - Model - 1\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 2\", () => {\r",
+									"    pm.expect(jsonData[1].ID).to.eql(pm.environment.get(\"ID - Model - 2\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 3\", () => {\r",
+									"    pm.expect(jsonData[2].ID).to.eql(pm.environment.get(\"ID - Model - 3\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 1\", () => {\r",
+									"    pm.expect(jsonData[0].Name).to.eql(pm.environment.get(\"Name 1\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 2\", () => {\r",
+									"    pm.expect(jsonData[1].Name).to.eql(pm.environment.get(\"Name 2\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 3\", () => {\r",
+									"    pm.expect(jsonData[2].Name).to.eql(pm.environment.get(\"Name 3\"));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Email\": \"kaduebb@gmail.com\",\r\n  \"Password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/OnlineChallenge/Model?MakeID=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Model"
+							],
+							"query": [
+								{
+									"key": "MakeID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/OnlineChallenge/Version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)    \r",
+									"})\r",
+									"\r",
+									"pm.test(\"Guardando variavel ModelID  \", () => {\r",
+									"    pm.environment.set(\"Modelid\", jsonData[0].ModelID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID version 6  \", () => {\r",
+									"    pm.environment.set(\"versionid 6\", jsonData[0].ID)\r",
+									"});\r",
+									"pm.test(\"Guardando variavel ID version 7  \", () => {\r",
+									"    pm.environment.set(\"versionid 7\", jsonData[1].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID version 8  \", () => {\r",
+									"    pm.environment.set(\"versionid 8\", jsonData[2].ID)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID version 9  \", () => {\r",
+									"    pm.environment.set(\"versionid 9\", jsonData[3].ID)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID Name version 6  \", () => {\r",
+									"    pm.environment.set(\"nameversionid 6\", jsonData[0].Name)\r",
+									"});\r",
+									"pm.test(\"Guardando variavel ID Name version 7  \", () => {\r",
+									"    pm.environment.set(\"nameversionid 7\", jsonData[1].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID Name version 8  \", () => {\r",
+									"    pm.environment.set(\"nameversionid 8\", jsonData[2].Name)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Guardando variavel ID Name version 9  \", () => {\r",
+									"    pm.environment.set(\"nameversionid 9\", jsonData[3].Name)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validar ModelID 1\", () => {\r",
+									"    pm.expect(jsonData[0].ModelID).to.eq(pm.environment.get(\"Modelid\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar ModelID 2\", () => {\r",
+									"    pm.expect(jsonData[1].ModelID).to.eq(pm.environment.get(\"Modelid\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar ModelID 3\", () => {\r",
+									"    pm.expect(jsonData[2].ModelID).to.eq(pm.environment.get(\"Modelid\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar ModelID 4\", () => {\r",
+									"    pm.expect(jsonData[3].ModelID).to.eq(pm.environment.get(\"Modelid\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar ModelID 5\", () => {\r",
+									"    pm.expect(jsonData[4].ModelID).to.eq(pm.environment.get(\"Modelid\"));\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validando ID 1\", () => {\r",
+									"    pm.expect(jsonData[0].ID).to.eql(pm.environment.get(\"versionid 6\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 2\", () => {\r",
+									"    pm.expect(jsonData[1].ID).to.eql(pm.environment.get(\"versionid 7\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 3\", () => {\r",
+									"    pm.expect(jsonData[2].ID).to.eql(pm.environment.get(\"versionid 8\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando ID 4\", () => {\r",
+									"    pm.expect(jsonData[3].ID).to.eql(pm.environment.get(\"versionid 9\"));\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validando Name 1\", () => {\r",
+									"    pm.expect(jsonData[0].Name).to.eql(pm.environment.get(\"nameversionid 6\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 2\", () => {\r",
+									"    pm.expect(jsonData[1].Name).to.eql(pm.environment.get(\"nameversionid 7\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 3\", () => {\r",
+									"    pm.expect(jsonData[2].Name).to.eql(pm.environment.get(\"nameversionid 8\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Name 4\", () => {\r",
+									"    pm.expect(jsonData[3].Name).to.eql(pm.environment.get(\"nameversionid 9\"));\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/OnlineChallenge/Version?modelID=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Version"
+							],
+							"query": [
+								{
+									"key": "modelID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/OnlineChallenge/Vehicles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)    \r",
+									"})\r",
+									"\r",
+									"pm.test(\"Validando Lista 1\", () => {\r",
+									"    pm.expect(jsonData[0].ID).to.eql(pm.environment.get(\"ID - 1\"));\r",
+									"    pm.expect(jsonData[0].Make).to.eql(pm.environment.get(\"marca 2\"));\r",
+									"    pm.expect(jsonData[0].Model).to.eql(\"City\");\r",
+									"    pm.expect(jsonData[0].Version).to.eql(pm.environment.get(\"nameversionid 8\"));\r",
+									"    pm.expect(jsonData[0].YearModel).to.eql(2018);\r",
+									"    pm.expect(jsonData[0].YearFab).to.eql(2017);   \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Lista 2\", () => {\r",
+									"    pm.expect(jsonData[1].ID).to.eql(pm.environment.get(\"ID - 2\"));\r",
+									"    pm.expect(jsonData[1].Make).to.eql(\"Mitsubishi\");\r",
+									"    pm.expect(jsonData[1].Model).to.eql(\"Lancer\");\r",
+									"    pm.expect(jsonData[1].Version).to.eql(\"2.0 EVO 4P AUTOMÁTICO\");\r",
+									"    pm.expect(jsonData[1].YearModel).to.eql(2012);\r",
+									"    pm.expect(jsonData[1].YearFab).to.eql(2012);   \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validando Lista 3\", () => {\r",
+									"    pm.expect(jsonData[2].ID).to.eql(pm.environment.get(\"ID - 3\"));\r",
+									"    pm.expect(jsonData[2].Make).to.eql(pm.environment.get(\"marca 2\"));\r",
+									"    pm.expect(jsonData[2].Model).to.eql(\"Fit\");\r",
+									"    pm.expect(jsonData[2].Version).to.eql(\"1.4 LXL 16V FLEX 4P AUTOMÁTICO\");\r",
+									"    pm.expect(jsonData[2].YearModel).to.eql(2018);\r",
+									"    pm.expect(jsonData[2].YearFab).to.eql(2018);   \r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/OnlineChallenge/Vehicles?Page=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Vehicles"
+							],
+							"query": [
+								{
+									"key": "Page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,3 @@
+Para verificar as execuções que rodei no POSTMAN, basta abrir a pasta newman e abrir o arquivo HTML
+
+Os scripts criado para a execução dos teste fica dentro do arquivo "webmotors-qa-automation-api.postman_collection.json"
